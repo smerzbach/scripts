@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name     Google Scholar Alerts
+// @name        Google Scholar Alerts
 // @description Insert buttons for creating Scholar Alerts
-// @version  1
-// @grant    none
-// @include     *://scholar.google.*/
+// @version     1.0
+// @grant       none
+// @include     *://scholar.google.*/*
 // ==/UserScript==
 
  /*
@@ -38,10 +38,10 @@ function createAlertAnchor(clusterID) {
 var entries = document.getElementsByClassName("gs_ri");
 
 if (entries != null && entries.length > 0) {
-  for (i = 0; i < entries.length; i++) {
+  for (var i = 0; i < entries.length; i++) {
     var clusterID = getClusterID(entries[i]);
     var entryLinks = entries[i].getElementsByClassName("gs_fl");
-    anchor = createAlertAnchor(clusterID)
+    var anchor = createAlertAnchor(clusterID)
     entryLinks[0].appendChild(anchor);
   }
 }
